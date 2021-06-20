@@ -22,12 +22,12 @@ export default {
 
 <style>
     .article {
-        width: 800px;
+        width: 50rem;
     }
     .article h2 {
         padding-bottom: 5px;
         border-bottom: 2px dotted #444;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
     }
     .article h2 span {
         padding-right: 5px;

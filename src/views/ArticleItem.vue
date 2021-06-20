@@ -18,7 +18,10 @@
           </div>
       </div>
       <div class="bgi">
-          <img src="~assets/img/sw.jpg" alt="纱雾">
+          <div class="imgBg">
+
+          </div>
+          <!-- <img src="~assets/img/sw.jpg" alt="纱雾"> -->
       </div>
   </div>
 </template>
@@ -33,7 +36,7 @@ export default {
     .articleItem {
         margin: 25px 0;
         display: flex;
-        border: 1px solid #000;
+        border: 1px solid #2abce9;
         border-radius: 11px;
         overflow: hidden;
         transition: box-shadow .5s;
@@ -41,7 +44,7 @@ export default {
     .articleItem:hover {
         box-shadow: 0 0 15px #ccc;
     }
-    .articleItem:hover .bgi img {
+    .articleItem:hover .bgi .imgBg {
         transform: scale(1.2);
     }
     .articleItem .content {
@@ -85,9 +88,15 @@ export default {
     .bgi {
         overflow: hidden;
     }
-    .bgi img {
+    
+    .bgi .imgBg {
         width: 100%;
+        height: 100%;
+        background-image: url(~assets/img/sw.jpg);
+        background-size: cover;
         transition: transform .5s;
-        vertical-align: middle;
+    }
+    .summary {
+        height: 90px;
     }
 </style>

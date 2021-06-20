@@ -52,7 +52,7 @@ export default {
       currentIndex: 0,
       routePath: [],
       fontImg: ['&#xe6e6;','&#xe6b8;','&#xe677;','&#xe63a;','&#xe60c;','&#xe6bc;','&#xe608;','&#xe607;'],
-      isSearchShow:false
+      isSearchShow:false,
     }
   },
   methods: {

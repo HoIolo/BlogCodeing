@@ -7,8 +7,8 @@
           <slot></slot>
       </div>
       <div class="other">
-          <div class="search">
-              <span class="iconfont" @click="toggleSearch">&#xe67d;</span>
+          <div class="search" @click="toggleSearch">
+              <span class="iconfont">&#xe67d;</span>
           </div>
           <div class="user">
               <span class="iconfont">&#xe640;</span>
@@ -138,6 +138,11 @@ export default {
         width: 3rem;
         text-align: center;
         cursor: pointer;
+    }
+    .tab-bar .other .search:hover,
+    .tab-bar .other .user:hover {
+        color: aqua;
+        transition: all .5s;
     }
     .tab-bar .other .search span,
     .tab-bar .other .user span {

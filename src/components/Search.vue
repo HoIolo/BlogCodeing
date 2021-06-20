@@ -25,11 +25,11 @@ export default {
 
 <style>
     #search .c-search {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
-        z-index: 9;
+        z-index: 12;
         text-align: center;
         color: #fff;
     }
@@ -53,5 +53,14 @@ export default {
         width:100vw;
         height: 100vh;
         background-color: rgba(1,1,1,.5);
+        z-index: 11;
+    }
+    @keyframes show {
+        0% {
+            
+        }
+        100% {
+
+        }
     }
 </style>

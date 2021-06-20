@@ -16,7 +16,7 @@ export default {
         width: 800px;
         border: 2px dotted #444;
         border-radius: 22px;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
         padding-left: 25px;
         box-sizing: border-box;
         line-height: 50px;

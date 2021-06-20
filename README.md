@@ -1,16 +1,17 @@
 # blog
 
-## Project setup
+## 项目安装
+控制台运行
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 项目构建
 ```
 npm run build
 ```

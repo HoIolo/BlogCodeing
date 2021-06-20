@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}
+li {
+    list-style: none;
+}
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:768px) {
+    html {
+        font-size: 12px;
+    }
+}
+html {
+    font-family: tsxmm;
+    font-weight: 600;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #2abce9;
+}
+::selection {
+    color: #2abce9;
+}
+input,button {
+    outline: none;
+}

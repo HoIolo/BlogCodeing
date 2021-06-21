@@ -7,7 +7,7 @@
         <Article />
       </div>
       <div class="container-right">
-        <UserInfo />
+        <UserInfo/>
       </div>
     </div>
   </div>

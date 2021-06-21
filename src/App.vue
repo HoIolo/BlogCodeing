@@ -90,13 +90,18 @@ export default {
   },
   created() {
     this.routePath = this.$router.options.routes
+    this.$store.commit("setWindowWidth",{
+        value:document.documentElement.clientWidth
+    })
   },
   mounted() {
-    // window.addEventListener('resize',() => {
-    //   this.windowWidth = document.documentElement.clientWidth
-    //   console.log(this.windowWidth);
-    // })
-    console.log(this.$store);
+    //监听屏幕宽高改变
+    window.addEventListener('resize',() => {
+      //设置共享变量窗口宽度
+      this.$store.commit("setWindowWidth",{
+        value:document.documentElement.clientWidth
+      })
+    })
   },
 }
 </script>

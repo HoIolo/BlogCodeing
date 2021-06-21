@@ -8,8 +8,9 @@ import 'nprogress/nprogress.css'
 import 'aplayer/dist/APlayer.min.css'
 import APlayer from 'aplayer'
 import {aplayerOptions} from './network/aplayer.js'
+import store from './store'
 
-createApp(App)
+createApp(App).use(store)
 .use(router)
 .mount('#app')
 

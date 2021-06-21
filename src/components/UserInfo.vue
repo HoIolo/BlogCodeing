@@ -1,5 +1,5 @@
 <template>
-  <div class="userInfo">
+  <div class="userInfo" v-if="getWindow">
       <div class="userIns">
           <img src="~assets/img/me.jpg" alt="">
           <div class="userName">小析</div>
@@ -22,7 +22,11 @@
 
 <script>
 export default {
-
+    computed: {
+        getWindow() {
+            return this.$store.getters.getWindowWidth.value > 960
+        }
+    }
 }
 </script>
 

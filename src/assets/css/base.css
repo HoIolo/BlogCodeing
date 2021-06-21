@@ -29,11 +29,18 @@ html {
     height: 8px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #2abce9;
+    background: var(--baseColor);
 }
 ::selection {
-    color: #2abce9;
+    color: var(--baseColor);
 }
 input,button {
     outline: none;
+}
+:root {
+    --baseColor:#2abce9;
+    --shadow:rgb(223, 222, 222);
+    --hshadow:rgb(180,180,180);
+    --mtop:50px;
+    --radius:11px;
 }

@@ -6,10 +6,10 @@
               <span class="showtime">2021-6-20</span>
           </div>
           <div class="articleTitle">
-              <p>本博客搭建过程</p>
+              <p><router-link to="/guiDan">本博客搭建过程</router-link></p>
           </div>
           <div class="see">
-              <p><span class="iconfont">&#xe668;</span><span class="num">0</span></p>
+              <p><span class="iconfont">&#xe668;</span><span class="num">1</span></p>
               <p><span class="iconfont">&#xe67b;</span><span class="num">0</span></p>
               <p><span class="iconfont">&#xe66b;</span> <span class="type">文章</span></p>
           </div>
@@ -36,13 +36,13 @@ export default {
     .articleItem {
         margin: 25px 0;
         display: flex;
-        border: 1px solid #2abce9;
         border-radius: 11px;
         overflow: hidden;
+        box-shadow: 0 0 10px var(--shadow);
         transition: box-shadow .5s;
     }
     .articleItem:hover {
-        box-shadow: 0 0 15px #ccc;
+        box-shadow: 0 0 15px var(--hshadow);
     }
     .articleItem:hover .bgi .imgBg {
         transform: scale(1.2);

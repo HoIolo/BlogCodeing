@@ -1,6 +1,5 @@
 <template>
   <div class="article">
-      <h2><span class="iconfont">&#xe618;</span>Article</h2>
       <div class="articleItems">
           <ArticleItem/>
       </div>
@@ -23,15 +22,6 @@ export default {
 <style>
     .article {
         width: 50rem;
-    }
-    .article h2 {
-        padding-bottom: 5px;
-        border-bottom: 2px dotted #444;
-        margin-bottom: 50px;
-    }
-    .article h2 span {
-        padding-right: 5px;
-        font-size: 25px;
     }
     .getMore {
         display: block;

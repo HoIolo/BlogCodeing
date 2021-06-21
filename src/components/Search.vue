@@ -1,10 +1,10 @@
 <template>
-  <div id="search">
-      <div class="c-search">
+  <div id="search" @click.self="toggleSearch">
+    <div class="c-search">
         <h2>搜索</h2>
         <input type="text" autofocus>
-      </div>
-      <div class="coverBg" @click="toggleSearch"></div>
+        <div class="more"></div>
+    </div>
   </div>
 </template>
 
@@ -12,13 +12,13 @@
 export default {
     data() {
         return {
-
+            
         }
     },
     methods: {
         toggleSearch() {
             this.$emit('toggleSearch',false)
-        }
+        },
     },
 }
 </script>
@@ -28,14 +28,17 @@ export default {
         position: fixed;
         left: 50%;
         top: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-130px);
         z-index: 12;
         text-align: center;
         color: #fff;
+        animation: show .5s;
     }
     #search .c-search h2 {
         position: relative;
-        bottom: 100px;
+        bottom: 80px;
+        font-size: 35px;
+        color: orange;
     }
     #search .c-search input {
          width: 800px;
@@ -43,10 +46,10 @@ export default {
         border-radius: 22px;
         border: none;
         padding-left: 15px;
-        box-shadow: 0 0 15px #444;
+        box-shadow: 0 -5px 15px #444;
         font-size: 20px;
     }
-    #search .coverBg {
+    #search{
         position: fixed;
         left: 0;
         top: 0;
@@ -57,10 +60,10 @@ export default {
     }
     @keyframes show {
         0% {
-            
+            opacity: 0;
         }
         100% {
-
+            opacity: 1;
         }
     }
 </style>

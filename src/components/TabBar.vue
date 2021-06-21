@@ -1,7 +1,7 @@
 <template>
   <div class="tab-bar" ref="tabBar" :class="{stickTop:isStickTop}">
       <div class="logo">
-          <router-link to="/">小析の</router-link>
+          <a href="/">小析の</a>
       </div>
       <div class="menus">
           <slot></slot>

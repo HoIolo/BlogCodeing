@@ -1,7 +1,7 @@
 <template>
   <div id="notice">
       <span class="iconfont">&#xe614;</span>
-      <p>评论区禁止发广告，一经发现将移入黑名单!</p>
+      <p>朋友，感谢你的到来~</p>
   </div>
 </template>
 
@@ -13,13 +13,14 @@ export default {
 
 <style>
     #notice {
-        width: 800px;
+        width: 50rem;
         border: 2px dotted #444;
         border-radius: 22px;
         margin-bottom: 50px;
         padding-left: 25px;
         box-sizing: border-box;
         line-height: 50px;
+        box-shadow: 0 0 10px #ccc;
     }
     #notice span {
         position: relative;

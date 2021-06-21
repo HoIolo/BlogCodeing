@@ -2,18 +2,29 @@
   <div id="app">
     <TabBar :menus="menus" @toggleSearch="toggleSearch">
       <div class="menu" v-for="(item,index) in menus" :key="index">
-        <router-link to="/" @click="activeClick(index)" :class="{active:currentIndex==index}"><span class="iconfont" v-html="fontImg[index]"></span>{{item}}</router-link>
+        <router-link :to="routePath[index]" @click="activeClick(index)" :class="{active:currentIndex==index}"><span class="iconfont" v-html="fontImg[index]"></span>{{item}}</router-link>
       </div>
     </TabBar>
     <BackTop/>
-    <Search v-if="isSearchShow" @toggleSearch="bgClick"/>
+    <transition name="fade">
+      <Search v-if="isSearchShow" @toggleSearch="bgClick"/>
+    </transition>
     <router-view></router-view>
     <Footer/>
+    <!--音乐播放器 -->
+    <div id="player"></div>
   </div>
 </template>
 
 <style>
  @import url('assets/css/base.css');
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .menu {
   display: inline-block;
 }
@@ -30,6 +41,16 @@
 }
 .menu:hover::after {
   width: 5rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.container-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
 }
 </style>
 
@@ -53,6 +74,7 @@ export default {
       routePath: [],
       fontImg: ['&#xe6e6;','&#xe6b8;','&#xe677;','&#xe63a;','&#xe60c;','&#xe6bc;','&#xe608;','&#xe607;'],
       isSearchShow:false,
+      windowWidth: 0
     }
   },
   methods: {
@@ -68,6 +90,13 @@ export default {
   },
   created() {
     this.routePath = this.$router.options.routes
+  },
+  mounted() {
+    // window.addEventListener('resize',() => {
+    //   this.windowWidth = document.documentElement.clientWidth
+    //   console.log(this.windowWidth);
+    // })
+    console.log(this.$store);
   },
 }
 </script>

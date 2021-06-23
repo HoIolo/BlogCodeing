@@ -21,8 +21,9 @@ export default {
 
 <style>
     .article {
-        width: 50rem;
+        width: var(--dBoxWidth);
     }
+    
     .getMore {
         display: block;
         text-align: center;

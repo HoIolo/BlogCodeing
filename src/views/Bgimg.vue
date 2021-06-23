@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #bgcBox .middleInfo {
   position: absolute;
   left: 50%;
@@ -20,7 +20,7 @@ export default {
   transform: translateX(-50%) translateY(-50%);
 }
 #bgcBox .middleInfo p {
-  font-size: 85px;
+  font-size: 5.3125rem;
   color: #fff;
   font-weight: 900;
   text-shadow: 0 0 15px;
@@ -42,6 +42,6 @@ export default {
   /* background-position: -35px -125px; */
   background-size: cover;
   background-attachment: fixed;
-  margin-bottom: 50px;
+  margin-bottom: var(--mtop);
 }
 </style>

@@ -13,10 +13,10 @@ export default {
 
 <style>
     #notice {
-        width: 50rem;
+        /* width: 50rem; */
         border: 2px dotted #444;
         border-radius: 22px;
-        margin-bottom: 50px;
+        margin-bottom: var(--mtop);
         padding-left: 25px;
         box-sizing: border-box;
         line-height: 50px;

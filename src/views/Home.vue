@@ -1,15 +1,16 @@
 <template>
   <div id="home">
     <Bgimg>Hello,friends</Bgimg>
-    <div class="container">
-      <div class="container-left">
-        <Notice />
-        <Article />
-      </div>
-      <div class="container-right">
-        <UserInfo/>
-      </div>
-    </div>
+    <Container>
+      <ContainerLeft>
+        <template v-slot:containerLeftTop>
+          <Notice/>
+        </template>
+        <template v-slot:containerLeftMain>
+          <Article/>
+        </template>
+      </ContainerLeft>
+    </Container>
   </div>
 </template>
 
@@ -17,22 +18,29 @@
 import Article from "views/Article.vue";
 import Notice from "views/Notice.vue";
 import Bgimg from 'views/Bgimg.vue'
-
-import UserInfo from "components/UserInfo.vue";
-
+import Container from 'components/container/Container.vue'
+import ContainerLeft from 'components/container/ContainerLeft.vue'
 export default {
   name: "Home",
   components: {
+    Container,
+    Bgimg,
     Article,
     Notice,
-    UserInfo,
-    Bgimg
-  },
+    ContainerLeft,
+  }
 };
 </script>
 
 <style scoped>
 #bgcBox {
   height: 100vh;
+}
+@media screen and (max-width:768px) {
+  #bgcBox {
+    height: 50vh;
+    background-size: 100% 90vw;
+    background-image: url(~assets/img/mhome.jpg);
+  }
 }
 </style>

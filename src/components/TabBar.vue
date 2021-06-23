@@ -3,7 +3,9 @@
       <div class="logo">
           <a href="/">小析の</a>
       </div>
-      <div class="menus">
+      <div class="menuBtn" v-if="getWindow <= 768" @click="showMiniMenu" >三</div>
+      <div class="menus" :class="{miniMenuShow:isShowMiniMenu}">
+          <div class="closed" v-if="getWindow <= 768" @click="closeMiniMenu">X</div>
           <slot></slot>
       </div>
       <div class="other">
@@ -23,7 +25,8 @@ export default {
         return {
             currentIndex: 0,
             isStickTop: false,
-            isSearchShow:false
+            isSearchShow:false,
+            isShowMiniMenu:false
         }
     },
     props: {
@@ -41,6 +44,13 @@ export default {
         toggleSearch() {
             this.isSearchShow = true
             this.$emit('toggleSearch',this.isSearchShow)
+        },
+        //移动端显示菜单
+        showMiniMenu() {
+            this.isShowMiniMenu = true;
+        },
+        closeMiniMenu() {
+            this.isShowMiniMenu = false;
         }
     },
     created() {
@@ -50,18 +60,23 @@ export default {
             let scroll = e.target.documentElement.scrollTop
             scroll > 10 ? this.isStickTop = true : this.isStickTop = false
         })
+    },
+    computed: {
+        getWindow() {
+            return this.$store.getters.getWindowWidth.value
+        }
     }
 }
 </script>
 
 <style>
+    .router-link-active {
+        color: pink;
+    }
     .stickTop {
         background-color: #fff !important;
         box-shadow: 0 -5px 25px #ccc;
         color: #000 !important;
-    }
-    .active {
-        color: pink;
     }
     @media screen and (max-width:1200px) {
         .tab-bar .menus a {
@@ -100,28 +115,63 @@ export default {
         font-size: 1.875rem;
         background-color: rgba(255,244,244,.5);
         border-radius: 15px;
-        padding: 0 px;
+        padding: 0;
     }
     .tab-bar .menus {
         display: flex;
         justify-content: space-around;
     }
     @media screen and (max-width:768px) {
+        .closed {
+            position: absolute;
+            right: 0;
+            font-size: 25px;
+            width: 50px;
+        }
+        .miniMenuShow {
+            left: 0 !important;
+        }
         .tab-bar {
             height: 44px;
+            justify-content: space-between;
         }
         .tab-bar .logo {
             display: none;
         }
+        .menus .menu::after {
+            display: none;
+        }
         .tab-bar .menus{
-            position: absolute;
-            left: 0;
-            top: 44px;
-            display: inline-block;
+            /* display: none; */
+            position: fixed;
+            left: -80vw;
+            top: 0;
             flex-direction: column;
+            justify-content: start;
+            height: 100vh;
+            width: 200px;
+            background-color: #fff;
+            box-shadow: 0 0 10px var(--shadow);
+            text-align: center;
+            color: #000;
+            transition: all .5s;
+        }
+        .tab-bar .menus a {
+            width: 10rem;
+            line-height: 50px;
+        }
+        .other {
+            margin-right: 15px;
+        }
+        .other span {
+            font-size: 20px !important;
+        }
+        .tab-bar .other .search,
+        .tab-bar .other .user {
+            width: 5rem;
         }
     }
-    .tab-bar .menus a {
+    .menus a {
         display: inline-block;
         letter-spacing: 2px;
         text-align: center;
@@ -133,8 +183,8 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    .tab-bar .other .search,
-    .tab-bar .other .user {
+    .search,
+    .user {
         width: 3rem;
         text-align: center;
         cursor: pointer;
@@ -147,5 +197,10 @@ export default {
     .tab-bar .other .search span,
     .tab-bar .other .user span {
         font-size: 1.5625rem;
+    }
+    .menuBtn {
+        line-height: 44px;
+        font-size: 25px;
+        margin-left: 15px;
     }
 </style>

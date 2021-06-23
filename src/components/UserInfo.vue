@@ -1,5 +1,5 @@
 <template>
-  <div class="userInfo" v-if="getWindow">
+  <div class="userInfo">
       <div class="userIns">
           <img src="~assets/img/me.jpg" alt="">
           <div class="userName">小析</div>
@@ -23,9 +23,7 @@
 <script>
 export default {
     computed: {
-        getWindow() {
-            return this.$store.getters.getWindowWidth.value > 960
-        }
+        
     }
 }
 </script>
@@ -80,5 +78,20 @@ export default {
     }
     .userContact a span {
         font-size: 25px;
+    }
+    @media screen and (max-width:768px) {
+        .userData {
+            display: none;
+        }
+        .userContact {
+            display: none;
+        }
+        .userInfo {
+            width: 100%;
+            box-shadow: none;
+        }
+        .userInfo:hover {
+            box-shadow: none;
+        }
     }
 </style>

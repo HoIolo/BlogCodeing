@@ -5,12 +5,11 @@ import './assets/font/iconfont.css'
 import './assets/font/font.css'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import 'aplayer/dist/APlayer.min.css'
-import APlayer from 'aplayer'
-import {aplayerOptions} from './network/aplayer.js'
 import store from './store'
+// import APlayer from '@moefe/vue-aplayer'
 
-createApp(App).use(store)
+createApp(App)
+.use(store)
 .use(router)
 .mount('#app')
 
@@ -40,6 +39,4 @@ NProgress.configure({
   minimum: 0.3 // 初始化时的最小百分比
 })
 
-//音乐播放器
-const ap = new APlayer(aplayerOptions());
 

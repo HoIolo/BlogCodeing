@@ -41,7 +41,7 @@ export default {
         color: orange;
     }
     #search .c-search input {
-         width: 800px;
+        width: 50rem;
         height: 50px;
         border-radius: 22px;
         border: none;
@@ -57,6 +57,11 @@ export default {
         height: 100vh;
         background-color: rgba(1,1,1,.5);
         z-index: 11;
+    }
+    @media screen and (max-width:768px) {
+        #search .c-search input {
+             width: 40rem;
+        }
     }
     @keyframes show {
         0% {

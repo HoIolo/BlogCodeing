@@ -8,9 +8,7 @@
                 <Comment/>
               </div>
           </div>
-          <div class="container-right">
-              <UserInfo/>
-          </div>
+            <ContainerRight/>
       </div>
   </div>
 </template>
@@ -19,12 +17,12 @@
 import Comment from 'views/Comment.vue'
 import SendMessage from 'views/SendMessage.vue'
 import Bgimg from 'views/Bgimg.vue'
-import UserInfo from 'components/UserInfo.vue'
+import ContainerRight from 'components/container/ContainerRight.vue'
 
 export default {
     components: {
         Bgimg,
-        UserInfo,
+        ContainerRight,
         SendMessage,
         Comment
     }
@@ -41,9 +39,9 @@ export default {
     align-items: center;
     width: 50rem;
     height: 100vh;
-    box-shadow: 0 0 10px rgb(223, 222, 222);
+    /* box-shadow: 0 0 10px rgb(223, 222, 222); */
+    /* background-color: rgba(84, 178, 255, 0.164); */
     border-radius: 11px;
-    transition: box-shadow .5s;
 }
 
 </style>

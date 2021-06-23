@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <TabBar :menus="menus" @toggleSearch="toggleSearch">
+      <UserInfo v-if="getWindow <= 768"/>
       <div class="menu" v-for="(item,index) in menus" :key="index">
-        <router-link :to="routePath[index]" @click="activeClick(index)" :class="{active:currentIndex==index}"><span class="iconfont" v-html="fontImg[index]"></span>{{item}}</router-link>
+        <router-link :to="routePath[index]"><span class="iconfont" v-html="fontImg[index]"></span>{{item}}</router-link>
       </div>
     </TabBar>
     <BackTop/>
@@ -12,9 +13,64 @@
     <router-view></router-view>
     <Footer/>
     <!--音乐播放器 -->
-    <div id="player"></div>
   </div>
 </template>
+
+<script>
+import TabBar from 'components/TabBar.vue'
+import Footer from 'components/Footer.vue'
+import BackTop from 'components/BackTop.vue'
+import Search from 'components/Search.vue'
+import UserInfo from 'components/UserInfo'
+
+export default {
+  components: {
+    TabBar,
+    Footer,
+    BackTop,
+    Search,
+    UserInfo
+  },
+  data() {
+    return {
+      menus:['首页','归档','清单','微语','留言板','友人帐','关于','后院'],
+      routePath: [],
+      fontImg: ['&#xe6e6;','&#xe6b8;','&#xe677;','&#xe63a;','&#xe60c;','&#xe6bc;','&#xe608;','&#xe607;'],
+      isSearchShow:false,
+      windowWidth: 0
+    }
+  },
+  methods: {
+    //切换搜索的显示与隐藏
+    toggleSearch(isSearchShow) {
+      this.isSearchShow = isSearchShow
+    },
+    bgClick(isSearchShow) {
+      this.isSearchShow = isSearchShow
+    }
+  },
+  created() {
+    this.routePath = this.$router.options.routes
+    this.$store.commit("setWindowWidth",{
+        value:document.documentElement.clientWidth
+    })
+  },
+  mounted() {
+    //监听屏幕宽高改变
+    window.addEventListener('resize',() => {
+      //设置共享变量窗口宽度
+      this.$store.commit("setWindowWidth",{
+        value:document.documentElement.clientWidth
+      })
+    })
+  },
+  computed: {
+        getWindow() {
+            return this.$store.getters.getWindowWidth.value
+        }
+    }
+}
+</script>
 
 <style>
  @import url('assets/css/base.css');
@@ -47,61 +103,5 @@
   justify-content: center;
   margin-bottom: 50px;
 }
-.container-right {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
-}
+
 </style>
-
-<script>
-import TabBar from 'components/TabBar.vue'
-import Footer from 'components/Footer.vue'
-import BackTop from 'components/BackTop.vue'
-import Search from 'components/Search.vue'
-
-export default {
-  components: {
-    TabBar,
-    Footer,
-    BackTop,
-    Search
-  },
-  data() {
-    return {
-      menus:['首页','归档','清单','微语','留言板','友人帐','关于','后院'],
-      currentIndex: 0,
-      routePath: [],
-      fontImg: ['&#xe6e6;','&#xe6b8;','&#xe677;','&#xe63a;','&#xe60c;','&#xe6bc;','&#xe608;','&#xe607;'],
-      isSearchShow:false,
-      windowWidth: 0
-    }
-  },
-  methods: {
-    activeClick(index) {
-      this.currentIndex = index
-    },
-    toggleSearch(isSearchShow) {
-      this.isSearchShow = isSearchShow
-    },
-    bgClick(isSearchShow) {
-      this.isSearchShow = isSearchShow
-    }
-  },
-  created() {
-    this.routePath = this.$router.options.routes
-    this.$store.commit("setWindowWidth",{
-        value:document.documentElement.clientWidth
-    })
-  },
-  mounted() {
-    //监听屏幕宽高改变
-    window.addEventListener('resize',() => {
-      //设置共享变量窗口宽度
-      this.$store.commit("setWindowWidth",{
-        value:document.documentElement.clientWidth
-      })
-    })
-  },
-}
-</script>

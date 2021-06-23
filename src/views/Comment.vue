@@ -30,10 +30,11 @@ export default {
 #comment {
     display: flex;
     flex-direction: column;
-    width: 37.5rem;
+    width: var(--xBoxWidth);
     padding: 15px;
     box-shadow: 0 0 10px var(--shadow);
     margin-top: var(--mtop);
+    border-radius: var(--radius);
 }
 .commentTop {
     display: flex;

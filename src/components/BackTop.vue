@@ -34,16 +34,17 @@ export default {
 
 <style>
     .isShow {
-        background-position-y: -200px !important;
+        background-position-y: -35vh !important;
         animation: backTop 1.6s linear infinite;
+        height: 100vh !important;
     }
     #backTop a{
         position: fixed;
-        right: 30px;
-        height: 100vh;
+        right: 1.875rem;
+        height: 0vh;
         width: 80px;
         background: url(~assets/img/scroll.png) no-repeat center;
-        background-position-y: -1000px;
+        background-position-y: -1050px;
         z-index: 9;  
         transition: all .3s linear;  
     }

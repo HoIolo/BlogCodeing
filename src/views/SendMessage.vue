@@ -25,10 +25,10 @@ export default {};
 
 <style scoped>
 .writeMessage {
-    width: 37.5rem;
+    width: var(--xBoxWidth);
     box-shadow: 0 0 10px var(--shadow);
-    margin-top: var(--mtop);
     padding: 25px;
+    border-radius: var(--radius);
 }
 .sendMore {
     margin-top: 15px;

@@ -41,6 +41,15 @@ export default {
         box-shadow: 0 0 10px var(--shadow);
         transition: box-shadow .5s;
     }
+    @media screen and (max-width:768px) {
+        .articleItem {
+            flex-direction: column;
+            height: 350px;
+        }
+        .summary {
+            height: 35px !important;
+        }
+    }
     .articleItem:hover {
         box-shadow: 0 0 15px var(--hshadow);
     }

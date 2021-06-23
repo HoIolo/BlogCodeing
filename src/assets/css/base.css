@@ -17,7 +17,21 @@ li {
 }
 @media screen and (max-width:768px) {
     html {
-        font-size: 12px;
+        font-size: 10px;
+    }
+    :root {
+        --mtop:25px !important;
+        --xBoxWidth:100% !important;
+    }
+}
+@media screen and (max-width:565px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width:400px) {
+    html {
+        font-size: 7px;
     }
 }
 html {
@@ -31,6 +45,9 @@ html {
 ::-webkit-scrollbar-thumb {
     background: var(--baseColor);
 }
+::-webkit-scrollbar-track {
+    background-color: var(--shadow);
+}
 ::selection {
     color: var(--baseColor);
 }
@@ -43,4 +60,6 @@ input,button {
     --hshadow:rgb(180,180,180);
     --mtop:50px;
     --radius:11px;
+    --xBoxWidth:45rem;
+    --dBoxWidth:50rem;
 }

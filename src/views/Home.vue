@@ -38,7 +38,7 @@ export default {
 }
 @media screen and (max-width:768px) {
   #bgcBox {
-    height: 50vh;
+    height: 338px;
     background-size: 100% 90vw;
     background-image: url(~assets/img/mhome.jpg);
   }

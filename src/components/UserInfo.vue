@@ -12,10 +12,10 @@
           <div class="labek-num">0</div>
       </div>
       <div class="userContact">
-          <a href=""><span class="iconfont" title="QQ">&#xe876;</span></a>
-          <a href=""><span class="iconfont" title="Github">&#xe534;</span></a>
-          <a href=""><span class="iconfont" title="WeChat">&#xe6db;</span></a>
-          <a href=""><span class="iconfont" title="Bilibili">&#xe62a;</span></a>
+          <a href="javascript:void(0)"><span class="iconfont" title="QQ">&#xe876;</span></a>
+          <a href="javascript:void(0)"><span class="iconfont" title="Github">&#xe534;</span></a>
+          <a href="javascript:void(0)"><span class="iconfont" title="WeChat">&#xe6db;</span></a>
+          <a href="javascript:void(0)"><span class="iconfont" title="Bilibili">&#xe62a;</span></a>
       </div>
   </div>
 </template>
@@ -32,11 +32,12 @@ export default {
     .userInfo {
         width: 15.625rem;
         border-radius: 11px;
-        padding: 20px;
+        padding: 20px 20px 0;
         font-weight: 600;
         font-family: serif;
         box-shadow: 0 0 10px var(--shadow);
         transition: box-shadow .5s;
+        font-size: var(--fontSize);
     }
     .userInfo:hover {
         box-shadow: 0 0 20px var(--hshadow);

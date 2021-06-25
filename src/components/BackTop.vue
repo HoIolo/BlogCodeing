@@ -1,33 +1,24 @@
 <template>
-  <div id="backTop"><a href="javascript:void(0)" :class="{isShow:isBackTopShow}" @click="backtop"></a></div>
+  <div id="backTop"><a href="javascript:void(0)" :class="{isShow:getScrollTop > 200}" @click="getBackTopFun"></a></div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            isBackTopShow:false
+            
+        }
+    },
+    computed: {
+        getScrollTop() {
+            return this.$store.getters.getScrollTop.value
+        },
+        getBackTopFun() {
+            return this.$store.getters.getBackTop.value
         }
     },
     created() {
-        window.addEventListener('scroll', e=>{
-            //滚动条高度大于10的时候返回顶部出现
-            let scroll = e.target.documentElement.scrollTop
-            scroll > 200 ? this.isBackTopShow = true : this.isBackTopShow = false
-        })
-    },
-    methods: {
-        backtop() {
-            this.isBackTopShow = false
-            let top = document.documentElement.scrollTop || document.body.scrollTop
-	        // 实现滚动效果
-	        const timeTop = setInterval(() => {
-	            document.body.scrollTop = document.documentElement.scrollTop = top -= 50
-                if (top <= 0) {
-                    clearInterval(timeTop)
-                }
-	        }, 10)
-        }
+        
     },
 }
 </script>

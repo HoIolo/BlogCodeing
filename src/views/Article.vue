@@ -23,7 +23,6 @@ export default {
     .article {
         width: var(--dBoxWidth);
     }
-    
     .getMore {
         display: block;
         text-align: center;

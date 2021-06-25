@@ -30,9 +30,6 @@ export default {
 </script>
 
 <style scoped>
-#bgcBox {
-    height: 50vh;
-}
 .main-message {
     display: flex;
     flex-direction: column;
@@ -42,6 +39,7 @@ export default {
     /* box-shadow: 0 0 10px rgb(223, 222, 222); */
     /* background-color: rgba(84, 178, 255, 0.164); */
     border-radius: 11px;
+    font-size: var(--fontSize);
 }
 
 </style>

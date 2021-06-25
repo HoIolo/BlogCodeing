@@ -46,7 +46,7 @@ export default {
     margin: 5px 0;
 }
 .friendInfo .friendIns {
-    font-size: 10px;
+    font-size: 14px;
     color: #444;
 }
 img {

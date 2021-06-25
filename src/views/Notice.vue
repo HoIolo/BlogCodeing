@@ -21,12 +21,13 @@ export default {
         box-sizing: border-box;
         line-height: 50px;
         box-shadow: 0 0 10px #ccc;
+        font-size: 18px;
     }
     #notice span {
         position: relative;
         top: 2.5px;
         display: inline-block;
-        font-size: 1.5625rem;
+        font-size: 25px;
         color: #444;
     }
     #notice p {

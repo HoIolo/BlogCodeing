@@ -67,7 +67,7 @@ export default {
         display: inline-block;
         margin: 0 auto;
         padding: 1.5625rem;
-        font-size: 1.5625rem;
+        font-size: 25px;
     }
     .articleTitle p::after {
         content: "";
@@ -90,6 +90,7 @@ export default {
     }
     .see p {
         flex: 1;
+        font-size: 15px;
     }
     .see p span {
         margin-left: 5px;
@@ -106,6 +107,7 @@ export default {
         transition: transform .5s;
     }
     .summary {
-        height: 90px;
+        height: 50px;
+        font-size: 18px;
     }
 </style>

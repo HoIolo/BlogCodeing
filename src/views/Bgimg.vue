@@ -37,11 +37,16 @@ export default {
 }
 #bgcBox {
   position: relative;
-  height: 50vh;
+  height: 338px;
   background: url("~assets/img/48.jpg") no-repeat;
   /* background-position: -35px -125px; */
   background-size: cover;
   background-attachment: fixed;
   margin-bottom: var(--mtop);
+}
+@media screen and (max-width:320px) {
+  #app #bgcBox {
+    height: 280px;
+  }
 }
 </style>

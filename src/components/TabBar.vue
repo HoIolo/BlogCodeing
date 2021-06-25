@@ -10,7 +10,7 @@
       </div>
       <div class="other">
           <div class="search" @click="toggleSearch">
-              <span class="iconfont">&#xe67d;</span>
+              <span class="iconfont" title="搜索一下吧~">&#xe67d;</span>
           </div>
           <div class="user">
               <span class="iconfont">&#xe640;</span>
@@ -57,7 +57,10 @@ export default {
         //监听滚动事件
         window.addEventListener('scroll', e=>{
             //滚动条高度大于10的时候导航栏固定
-            let scroll = e.target.documentElement.scrollTop
+            this.$store.commit('setScrollTop',{
+                value: e.target.documentElement.scrollTop
+            })
+            let scroll = this.$store.getters.getScrollTop.value
             scroll > 10 ? this.isStickTop = true : this.isStickTop = false
         })
     },
@@ -132,7 +135,6 @@ export default {
             left: 0 !important;
         }
         .tab-bar {
-            height: 44px;
             justify-content: space-between;
         }
         .tab-bar .logo {
@@ -157,14 +159,11 @@ export default {
             transition: all .5s;
         }
         .tab-bar .menus a {
-            width: 10rem;
+            width: 11rem;
             line-height: 50px;
         }
         .other {
             margin-right: 15px;
-        }
-        .other span {
-            font-size: 20px !important;
         }
         .tab-bar .other .search,
         .tab-bar .other .user {
@@ -196,10 +195,10 @@ export default {
     }
     .tab-bar .other .search span,
     .tab-bar .other .user span {
-        font-size: 1.5625rem;
+        font-size: 25px;
     }
     .menuBtn {
-        line-height: 44px;
+        line-height: 55px;
         font-size: 25px;
         margin-left: 15px;
     }
